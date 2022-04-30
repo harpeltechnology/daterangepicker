@@ -63,13 +63,18 @@
 
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" id="autoApply"> autoApply
+                  <input type="checkbox" id="autoApply" checked="checked"> autoApply
                 </label>
               </div>
 
               <div class="checkbox">
                 <label>
                   <input type="checkbox" id="singleDatePicker"> singleDatePicker
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="showSingleCalendar" checked="checked"> showSingleCalendar
                 </label>
               </div>
 
@@ -93,7 +98,7 @@
 
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" id="timePicker" checked="checked"> timePicker
+                  <input type="checkbox" id="timePicker"> timePicker
                 </label>
               </div>
 
@@ -122,7 +127,7 @@
 
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" id="ranges" checked="checked"> ranges (with example predefined ranges)
+                  <input type="checkbox" id="ranges"> ranges (with example predefined ranges)
                 </label>
               </div>
 
@@ -146,7 +151,7 @@
 
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" id="linkedCalendars" checked="checked"> linkedCalendars
+                  <input type="checkbox" id="linkedCalendars"> linkedCalendars
                 </label>
               </div>
 
@@ -158,7 +163,7 @@
 
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" id="showCustomRangeLabel" checked="checked"> showCustomRangeLabel
+                  <input type="checkbox" id="showCustomRangeLabel"> showCustomRangeLabel
                 </label>
               </div>
 
@@ -239,6 +244,9 @@
         $('.configurator input, .configurator select').change(function() {
           updateConfig();
         });
+        $('.configurator input').click(function() {
+          updateConfig();
+        });
 
         $('.demo i').click(function() {
           $(this).parent().find('input').click();
@@ -261,6 +269,9 @@
 
           if ($('#singleDatePicker').is(':checked'))
             options.singleDatePicker = true;
+
+          if ($('#showSingleCalendar').is(':checked'))
+            options.showSingleCalendar = true;
           
           if ($('#showDropdowns').is(':checked'))
             options.showDropdowns = true;
@@ -325,8 +336,8 @@
           if (!$('#autoUpdateInput').is(':checked'))
             options.autoUpdateInput = false;
 
-          if (!$('#showCustomRangeLabel').is(':checked'))
-            options.showCustomRangeLabel = false;
+          if (!$('#showSingleCalendar').is(':checked'))
+            options.showSingleCalendar = false;
 
           if ($('#alwaysShowCalendars').is(':checked'))
             options.alwaysShowCalendars = true;
