@@ -11,6 +11,9 @@ a single date picker mode, a time picker, and predefined date ranges.
 
 ## [Documentation and Live Usage Examples](http://www.daterangepicker.com)
 
+Additionally, added #[showSingleCalendar] 
+
+
 ## [See It In a Live Application](https://awio.iljmp.com/5/drpdemogh)
 
 ## License
